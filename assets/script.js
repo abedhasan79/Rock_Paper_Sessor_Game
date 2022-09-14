@@ -15,20 +15,27 @@ if(getRandom==0){
 
 alert("Computer Choice is "+computerChoice);
 
-if(computerChoice==browserPrompt){
-    alert("It's a Tie");
-}else if( browserPrompt=="p" && computerChoice=="r"){
-    alert("You Win!");
-}else if(browserPrompt=="s" && computerChoice=="p"){
-    alert("You Win!");
-}else if(browserPrompt=="r" && computerChoice=="s"){
-    alert("You Win!");
-}else{
-    alert("Computer Wins!");
+function compareChoices(browserPrompt, computerChoice){
+    if(browserPrompt=="r" || browserPrompt=="s" || browserPrompt=="p"){
+        if(computerChoice==browserPrompt){
+            alert("It's a Tie");
+        }else if( browserPrompt=="p" && computerChoice=="r"){
+            alert("You Win!");
+        }else if(browserPrompt=="s" && computerChoice=="p"){
+            alert("You Win!");
+        }else if(browserPrompt=="r" && computerChoice=="s"){
+            alert("You Win!");
+        }else{
+            alert("Computer Wins!");
+        }   
+    }else{
+        alert("You Must Enter r or p or s");
+    }
+    if(window.confirm("Do you want to play again?")){
+        location.reload();
+    }
+    return;
 }
 
+compareChoices(browserPrompt, computerChoice);
 
-
-if(window.confirm("Do you want to play again?")){
-    location.reload();
-}
